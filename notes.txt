@@ -1,0 +1,104 @@
+- medalla launchpad https://medalla.launchpad.ethereum.org/transactions
+- eth2.0 deposit-cli
+- goerli faucet
+-----------------------
+- geth goerli node
+- prysm beacon-chain node
+- prysm validator
+
+
+# note: first sync beacon-chain and validator node before submitting the deposit data and payment.
+# opinion: I think above note should be explicitly clear on "launchpad" "Select Client" screen
+---------------------------
+- git clone
+prysm github
+https://github.com/prysmaticlabs/prysm
+prysm documentation
+https://docs.prylabs.network/docs/getting-started/
+  
+gpg keys????
+
+-hack
+ :123 and :137 use sha256sum in place of shasum -a 256
+
+./prysm.sh beacon-chain --http-web3provider http://127.0.0.1:8545
+  
+./prysm.sh validator wallet-v2 create
+  - select Non-HD Wallet (Most Basic)
+	dir (~/.eth2validators/prysm-wallet-v2)
+	password "jm" ...
+
+./prysm.sh validator --wallet-dir=/home/george/.eth2validators/prysm-wallet-v2
+  prompts to enter password
+
+or build from source
+
+bazel build //beacon-chain:beacon-chain
+bazel build //validator:validator
+
+bazel run //beacon-chain -- FLAGS
+
+--------------------
+eth2.0 deposit-cli
+
+// QUESTION what are deposit keys?? I want explanation of how it all works.
+// associated with `deposit_data....json`
+
+install. then
+
+./deposit.sh
+`Please choose how many validators you wish to run:` 1
+`Please choose your mnemonic language [english]` english
+`Please choose the (mainnet or testnet)` medalla
+`Type the password that secures your validator keystors(s)`
+mnemonic write down and confirm write down
+```
+Creating your keys.
+Saving your keystore(s).
+Creating your deposit(s).
+Verifying your keystore(s).
+Verifying your deposit(s).
+
+Success!
+
+Your keys can be found at: /mnt/teraByteDisk/teraByteDisk/eth2.0-deposit-cli/validator_keys
+```
+done
+
+./prysm.sh validator accounts-v2 import --keys-dir=/mnt/teraByteDisk/teraByteDisk/eth2.0-deposit-cli/validator_keys
+`Successfully imported 1 accounts, view all of them by running accounts-v2 list`
+
+./prysm.sh validator accounts-v2 list
+```
+Wallet password: 
+(keymanager kind) non-HD wallet
+
+Showing 1 validator account
+View the eth1 deposit transaction data for your accounts by running `validator accounts-v2 list --show-deposit-data
+
+Account 0 | ultimately-musical-unicorn
+[validating public key] 0x89a71e9b5b64c4d362c2b7fcaacb5b6b5a15b11d1d26e2b54b38c241f4d121f09808ea463766408a58b72a80ba54b2a7
+
+```
+./prysm.sh validator
+
+
+----------------
+lighthouse
+----------------
+
+EASY TO BUILD BUT MORE ERROR MESSAGES THAN I WANTED TO BOTHER WITH
+
+git clone git@github.com:sigp/lighthouse.git
+git checkout v0.2.12
+make
+
+// export to path ~/.cargo/bin
+
+lighthouse beacon_node
+lighthouse account validator import --directory /mnt/teraByteDisk/teraByteDisk/eth2.0-deposit-cli/validator_keys
+prompted for password then
+WARNING: DO NOT USE THE ORIGINAL KEYSTORES TO VALIDATE WITH ANOTHER CLIENT, OR YOU WILL GET SLASHED.
+lighthouse vc
+Sep 28 14:52:57.300 INFO Enabled validator                       voting_pubkey: 0x89a71e9b5b64c4d362c2b7fcaacb5b6b5a15b11d1d26e2b54b38c241f4d121f09808ea463766408a58b72a80ba54b2a7
+
