@@ -72,6 +72,10 @@
 
 	///  build, configure, run notes (why I chose this client implementation)
 
+// final steps in setup
+ 
+	// keys, tx, and why
+
 ---
 
 // looking forward
