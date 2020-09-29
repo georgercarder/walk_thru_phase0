@@ -28,8 +28,6 @@
 
 // what guide am I following
 
-// choice of clients and why
-
 ---
 
 //// !!! bulk of article will be focused here !!!
