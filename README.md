@@ -46,7 +46,7 @@
 
 	///  how it currently fits in (phase 0)
 
-	///  build, configure, run notes
+	///  build, configure, run notes (why I chose this client implementation)
 
 //// beacon node
 
@@ -58,7 +58,7 @@
 
 	///  how it currently fits in (phase 0)
 
-	///  build, configure, run notes
+	///  build, configure, run notes (why I chose this client implementation)
 
 //// validator node
 
@@ -70,7 +70,7 @@
 
 	///  how it currently fits in (phase 0)
 
-	///  build, configure, run notes
+	///  build, configure, run notes (why I chose this client implementation)
 
 ---
 
