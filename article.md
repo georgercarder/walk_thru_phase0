@@ -14,9 +14,9 @@
 
 ---
 
-// eth background
+// eth background. BRIEF
  
-// why 2.0 is needed
+// why 2.0 is needed. BRIEF
 
  // hinting at general structure (but keep it vague since will explain more below)
 
@@ -31,6 +31,8 @@
 // choice of clients and why
 
 ---
+
+//// bulk of article will be focused here
 
 // for each node descriptions of build and setup
 
