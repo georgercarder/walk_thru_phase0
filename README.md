@@ -32,11 +32,30 @@
 
 ---
 
-//// bulk of article will be focused here
+//// !!! bulk of article will be focused here !!!
 
-// for each node descriptions of build and setup
+// quick list of cast of characters
 
-// what role each client will have in the system (be specific as to what capabilities are in phase 0 and final phase)
+//// eth1 node
+	/// write up:
+	///  what it is
+	///  how it will eventually fit in
+	///  how it currently fits in (phase 0)
+	///  build, configure, run notes
+
+//// beacon node
+	/// write up:
+	///  what it is
+	///  how it will eventually fit in
+	///  how it currently fits in (phase 0)
+	///  build, configure, run notes
+
+//// validator node
+	/// write up:
+	///  what it is
+	///  how it will eventually fit in
+	///  how it currently fits in (phase 0)
+	///  build, configure, run notes
 
 ---
 

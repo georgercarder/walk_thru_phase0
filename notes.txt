@@ -100,5 +100,9 @@ lighthouse account validator import --directory /mnt/teraByteDisk/teraByteDisk/e
 prompted for password then
 WARNING: DO NOT USE THE ORIGINAL KEYSTORES TO VALIDATE WITH ANOTHER CLIENT, OR YOU WILL GET SLASHED.
 lighthouse vc
+
+//
+lighthouse beacon_node --staking
+lighthouse vc
 Sep 28 14:52:57.300 INFO Enabled validator                       voting_pubkey: 0x89a71e9b5b64c4d362c2b7fcaacb5b6b5a15b11d1d26e2b54b38c241f4d121f09808ea463766408a58b72a80ba54b2a7
 
