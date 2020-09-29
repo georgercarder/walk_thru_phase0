@@ -36,8 +36,6 @@
 
 //// eth1 node
 
-	/// write up:
-
 	///  what it is
 
 	///  how it will eventually fit in
@@ -48,8 +46,6 @@
 
 //// beacon node
 
-	/// write up:
-
 	///  what it is
 
 	///  how it will eventually fit in
@@ -59,8 +55,6 @@
 	///  build, configure, run notes (why I chose this client implementation)
 
 //// validator node
-
-	/// write up:
 
 	///  what it is
 
