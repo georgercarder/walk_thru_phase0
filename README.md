@@ -37,24 +37,39 @@
 // quick list of cast of characters
 
 //// eth1 node
+
 	/// write up:
+
 	///  what it is
+
 	///  how it will eventually fit in
+
 	///  how it currently fits in (phase 0)
+
 	///  build, configure, run notes
 
 //// beacon node
+
 	/// write up:
+
 	///  what it is
+
 	///  how it will eventually fit in
+
 	///  how it currently fits in (phase 0)
+
 	///  build, configure, run notes
 
 //// validator node
+
 	/// write up:
+
 	///  what it is
+
 	///  how it will eventually fit in
+
 	///  how it currently fits in (phase 0)
+
 	///  build, configure, run notes
 
 ---
