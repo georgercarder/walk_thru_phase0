@@ -34,8 +34,6 @@ In the former paradigm ("Eth 1.0") we treated the "Eth1" nodes and their associa
 
 For this Phase 0 step in the Eth2.0 upgrade, the "Eth1" nodes and their associated chain still provide an elevated service to the network by recording the smart contract transactions associated with the staking of validator nodes. Details of this staking will be in the "Validator node" section below. 
 
-	///  TODO build, configure, run notes
-
 We setup this Eth1 node:
 
 ```
