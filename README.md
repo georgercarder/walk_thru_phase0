@@ -20,7 +20,7 @@ We will be setting up 3 nodes:
 
 - validator node
 
-There are also auxiliary steps we will take to initialize this system. 
+There are also auxiliary steps we will take to initialize our "fleet" of nodes. 
 
 We will be installing and running these nodes from the `bash` shell of a Linux system. The order in which we set these nodes up matters to a certain extent, so we suggest following the order of this exploration.
 
