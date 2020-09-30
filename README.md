@@ -12,8 +12,6 @@ Our goal is to learn about each node in this upgrade. We'll do this by building 
 
 The guide we are following is the Eth2 Launch Pad for the Medalla testnet .
 
-//// !!! bulk of article will be focused here !!!
-
 We will be setting up 3 nodes:
 
 - eth1 node
