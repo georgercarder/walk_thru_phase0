@@ -43,7 +43,7 @@ git checkout $latest_tag
 make install
 ```
 
-This clones the `go-ethereum` repo, checks out to the latest release, and builds the source.
+This clones the `go-ethereum` repo, checks out to the latest release, and builds and installs an executable from source.
 
 It is advised to run the node in a "screen" so we may detach and do other work in the same console.
 
