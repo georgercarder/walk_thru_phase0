@@ -1,24 +1,26 @@
 #### Eth 2.0: A walk through Phase 0
 
-// () means "TODO put link here"
+// LK means "TODO put link here"
 
-With the /* TODO HUMAN SOUNDING ADJECTIVES explaining leadup */ of various beacon-chain testnets () we were curious to get a hands-on introduction to the various entities in the Eth 2.0 protocol (). There is a great deal written online about Eth 2.0 () and facets of its various phases so we figure the simplest way to get a view into Phase 0 of this upgrade is to just follow our nose and trace the interations of some existing clients. 
+With the /* TODO HUMAN SOUNDING ADJECTIVES explaining leadup */ of various beacon-chain testnets LK we were curious to get a hands-on introduction to the various entities in the Eth 2.0 protocol LK. There is a great deal written online about Eth 2.0 LK and facets of its various phases so we figure the simplest way to get a view into Phase 0 of this upgrade is to just follow our nose and trace the interations of some existing clients. 
 
-This is an Ethereum () blog, so we assume the reader is familiar with Ethereum as a platform as well as the motivation for the upgrade to Eth 2.0. If not, checkout these links () to get up to speed.
+This is an Ethereum LK blog, so we assume the reader is familiar with Ethereum as a platform as well as the motivation for the upgrade to Eth 2.0. If not, checkout these links LK to get up to speed.
 
 // rough outline of upgrade and phases here TODO
 
 Our goal is to learn about each node in this upgrade. We'll do this by building and running the respective software, describing its role in this phase (Phase 0) and the ultimate role-out (Phase 2), and actually tracing its interactions within the system.
 
-The guide we are following is the Eth2 Launch Pad for the Medalla testnet ().
+The guide we are following is the Eth2 Launch Pad for the Medalla testnet LK.
 
 //// !!! bulk of article will be focused here !!!
 
-// quick list of cast of characters
 We will be setting up 3 nodes:
-	- eth1 node
-	- beacon node
-	- validator node
+
+- eth1 node
+
+- beacon node
+
+- validator node
 
 There are also auxiliary steps we will take to initialize this system. 
 
