@@ -8,7 +8,7 @@ This is an Ethereum  blog, so we assume the reader is familiar with Ethereum as 
 
 // rough outline of upgrade and phases here TODO
 
-Our goal is to learn about each node in this upgrade. We'll do this by building and running the respective software, describing its role in this phase (Phase 0) and the ultimate role-out (Phase 2), and actually tracing its interactions within the system.
+Our goal is to learn about each node in this upgrade. We'll do this by building and running the respective software, describing its role in this phase (Phase 0) and the ultimate roll-out (Phase 2), and actually tracing its interactions within the system.
 
 The guide we are following is the Eth2 Launch Pad for the Medalla testnet .
 
