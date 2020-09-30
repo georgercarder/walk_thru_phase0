@@ -45,8 +45,11 @@ make install
 
 This clones the `go-ethereum` repo, checks out to the latest release, and builds the source.
 
+It is advised to run the node in a "screen" so we may detach and do other work in the same console.
+
 ```
-geth --goerli console
+screen -dmS goerli
+screen -S goerli -X stuff 'geth --goerli console'
 ```
 
 This is the minimal command to start the "Eth1" node syncing to the Goerli testnet. It may take several hours for this node to completely sync. Depending on the blockchain you are syncing you many need to run this on a system with a large amount of storage. On our device, we use a 1TB SSD. Various flags may be used for additional functionality, for instance you may want graphQL, or web-sockets RPC calls or to read/write to a custom data directory. `geth --help` will give you a list of the available flags. It may also be worthwhile to setup a firewall if your node is serving an RPC. A very simple, lightweight and effective firewall can be setup using `iptables` which is available on many system.
