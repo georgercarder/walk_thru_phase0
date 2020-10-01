@@ -42,7 +42,7 @@ In the former paradigm ("Eth 1.0") we treated the "Eth1" nodes and their associa
 
 For this transitional Phase 0 step in the Eth2.0 upgrade, the "Eth1" nodes and their associated chain still provide an elevated service to the network by recording the smart contract transactions associated with the staking of validator nodes. Details of this staking will be in the "Validator node" section below. 
 
-We setup this Eth1 node:
+We set up this Eth1 node:
 
 ```
 git clone https://github.com/ethereum/go-ethereum.git && cd go-ethereum
@@ -72,7 +72,25 @@ As stated above, a beacon node's duty is to maintain and communicate the beacon 
 
 For Phase 0, the beacon nodes will only accumulate votes for beacon blocks but not for shard blocks. Since the only "shard" at this point is the eth1 chain, whose consensus is already handled by its PoW. Still, the beacon nodes' beacon blocks will have an entry for all attestations in preparation for upcoming phases. Also, the beacon nodes will manage validator membership by processing logs resulting from deposits made to the eth1 deposit contract, and by collating proof of slashable offenses gathered by "slashers". Slashers are special nodes whose duty is to gather proof of slashable offenses and communicate the proof to beacon nodes. Slashable offenses will be covered in the validator section below.
 
-	/// build, configure, run notes
+We set up this beacon node:
+
+```
+git clone https://github.com/sigp/lighthouse.git && cd lighthouse
+latest_tag=$(git describe --tags)
+git checkout $latest_tag
+make install
+```
+
+This clones the `lighthouse` repo, checks out to the latest release, and builds and installs an executable from source.
+
+It is advised to run the beacon node in a "screen" so we may detach and do other work in the same console.
+
+```
+screen -dmS lighthouse-beacon-node 
+screen -S lighthouse-beacon-node -X stuff 'lighthouse beacon_node --staking'
+```
+
+Be sure not to forget the `--staking` flag above, otherwise the beacon node will not make available an endpoint for communication by validators.
 
 	/// sync // TODO explain what syncing means!
 
