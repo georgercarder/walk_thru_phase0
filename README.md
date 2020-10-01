@@ -6,7 +6,7 @@ With the eagerly anticipated release of various beacon-chain testnets we were cu
 
 This is an Ethereum blog, so we assume the reader is familiar with Ethereum as a platform as well as the motivation for the upgrade to Eth 2.0. If not, check out these links to get up to speed.
 
-The Eth2.0 upgrade is to be rolled out in phases. The large dedicated community designing and engineering this upgrade has broken the roll out into 4 phases:
+The Eth2.0 upgrade is to be rolled out in phases. The large dedicated community that has assembled to design and engineer this upgrade has broken the roll out into 4 phases:
 
 - Phase 0: the beacon chain (the current phase)
 
