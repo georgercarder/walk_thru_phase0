@@ -74,7 +74,7 @@ As stated above, a beacon node's duty is to maintain and communicate the beacon 
 
 	/// build, configure, run notes
 
-	/// sync
+	/// sync // TODO explain what syncing means!
 
 
 ### Now, we set up the Validator node.
