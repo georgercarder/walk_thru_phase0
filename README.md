@@ -100,6 +100,8 @@ Recall from the last section where we illustrated this new infrastructure zoomor
 
 These worm snacks however, have a lot of variety. There is an "Eth1.0" worm as well as other variants. They are all blockchains, but only one of them is an "Eth1.0" blockchain. These worm snacks are "shards" in the Eth2.0 system.
 
+These validators who do the "footwork" of the Eth2.0 protocol are economically incentivized to behave honestly (adhering to the protocol) in that they can either be rewarded or slashed for their behavior. The deposit of up to 32 ETH that each of these validators make in order to act an a validator agent has many effects in the design of the system. For one, it provides Sybil resistance for the protocol in that a bad actor cannot cheaply flood the system with validator nodes in order to either compromise the state or hoarde the profits from rewards. Also, this stake is a deposit that can be slashed if the validator behaves incorrectly. Finally, a rational validator would not jeopardize the value of their ETH holdings by undermining the system.
+
 	/// how it will eventually fit in
 
 	/// how it currently fits in (phase 0)
@@ -122,3 +124,5 @@ These worm snacks however, have a lot of variety. There is an "Eth1.0" worm as w
 
 // conclusion
 
+
+*Note: The worm vs Millipede metaphore can indeed be extended to accommodate forks in all blockchains of this system but for now we'll avoid a dive into talking about this system within a higher-dimensional space. The reader is welcome to run with it in the comments... :)*
