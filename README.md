@@ -98,7 +98,7 @@ This is the minimal command to start the beacon node syncing while making availa
 
 Recall from the last section where we illustrated this new infrastructure zoomorphized (like anthropomorphized but for animals) as a Millipede. The beacon nodes and their chain make up the body, or spine of the system, and the validator nodes are the innumerable feet doing the "footwork" of the system. But, we must be careful with this metaphore: *The former "Eth1.0" worm does NOT embed into the body of the Millipede.* Rather this Millipede is carnivorous and as it marches across the terrain it collects and processes worms section by section with its feet and eventually passes the result to its mouth. Still, I PROMISE this Millipede is cute and friendly. Bear with me.
 
-These worm snacks however, have a lot of variety. There is an "Eth1.0" worm as well as other variants. They are all blockchains, but only one of them is an "Eth1.0" blockchain. These "worms" are "shards" in the Eth2.0 system.
+These worm snacks however, have a lot of variety. There is an "Eth1.0" worm as well as other variants. They are all blockchains, but only one of them is an "Eth1.0" blockchain. These worm snacks are "shards" in the Eth2.0 system.
 
 	/// how it will eventually fit in
 
