@@ -2,13 +2,21 @@
 
 // TODO INCLUDE LINKS
 
-With the /* TODO HUMAN SOUNDING ADJECTIVES explaining leadup */ of various beacon-chain testnets  we were curious to get a hands-on introduction to the various entities in the Eth 2.0 protocol . There is a great deal written online about Eth 2.0  and facets of its various phases so we figure the simplest way to get a view into Phase 0 of this upgrade is to just follow our nose and trace the interactions of some existing clients. 
+With the eagerly anticipated release of various beacon-chain testnets we were curious to get a hands-on introduction to the various entities in the Eth 2.0 protocol. There is a great deal written online about Eth 2.0 and facets of its various phases so we figure the simplest way for us to get a unified view into Phase 0 of this upgrade is to just follow our nose and trace the interactions of some existing clients. 
 
-This is an Ethereum  blog, so we assume the reader is familiar with Ethereum as a platform as well as the motivation for the upgrade to Eth 2.0. If not, check out these links  to get up to speed.
+This is an Ethereum blog, so we assume the reader is familiar with Ethereum as a platform as well as the motivation for the upgrade to Eth 2.0. If not, check out these links to get up to speed.
 
-// rough outline of upgrade and phases here TODO
+The Eth2.0 upgrade is to be rolled out in phases. The large dedicated community designing and engineering this upgrade has broken the roll out into 4 phases:
 
-Our goal is to learn about each node in this upgrade. We'll do this by building and running the respective software, describing its role in this phase (Phase 0) and the ultimate roll-out (Phase 2), and actually tracing its interactions within the system.
+- Phase 0: the beacon chain (the current phase)
+
+- Phase 1: the shard chains
+
+- Phase 1.5: mainnet becomes a shard
+
+- Phase 2: fully formed shards
+
+In this exploration we will focus on the current phase, Phase 0. Our goal is to learn about each node in this upgrade. We'll do this by building and running the respective software, describing its role in this phase (Phase 0) and the ultimate roll-out (Phase 2), and actually tracing its interactions within the system.
 
 The guide we are following is the Eth2 Launch Pad for the Medalla testnet .
 
@@ -52,30 +60,30 @@ screen -dmS goerli
 screen -S goerli -X stuff 'geth --goerli console'
 ```
 
-This is the minimal command to start the "Eth1" node syncing to the Goerli testnet. It may take several hours for this node to completely sync. Depending on the blockchain you are syncing you many need to run this on a system with a large amount of storage. On our device, we use a 1TB SSD. Various flags may be used for additional functionality, for instance you may want graphQL, or web-sockets RPC calls or to read/write to a custom data directory. `geth --help` will give you a list of the available flags. It may also be worthwhile to setup a firewall if your node is serving an RPC. A very simple, lightweight and effective firewall can be setup using `iptables` which is available on many systems.
+This is the minimal command to start the "Eth1" node syncing to the Goerli testnet. It may take several hours for this node to completely sync. Depending on the blockchain you are syncing you many need to run this on a system with a large amount of storage. On our device, we use a 1TB SSD. Various flags may be used for additional functionality, for instance you may want graphQL, or web-sockets RPC calls or to read/write to a custom data directory. `geth --help` will give you a list of the available flags. It may also be worthwhile to setup a firewall if your node is serving an RPC. A very simple, lightweight, and effective firewall can be setup using `iptables` which is available on many systems.
 
 Next, we set up the Beacon node.
 
-	///  TODO what it is (and which one we choose)
+	/// TODO what it is (and which one we choose)
 
-	///  TODO how it will eventually fit in
+	/// TODO how it will eventually fit in
 
-	///  how it currently fits in (phase 0)
+	/// how it currently fits in (phase 0)
 
-	///  build, configure, run notes
+	/// build, configure, run notes
 
 	/// sync
 
 
 Now, we set up the Validator node.
 
-	///  what it is (and which one we choose). talk about open-standard
+	/// what it is (and which one we choose). talk about open-standard
 
-	///  how it will eventually fit in
+	/// how it will eventually fit in
 
-	///  how it currently fits in (phase 0)
+	/// how it currently fits in (phase 0)
 
-	///  build, configure, run notes
+	/// build, configure, run notes
 
 	// don't run yet
 
