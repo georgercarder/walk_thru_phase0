@@ -31,6 +31,14 @@ gpg keys????
 ./prysm.sh validator --wallet-dir=/home/george/.eth2validators/prysm-wallet-v2
   prompts to enter password
 
+// regarding gpg keys
+gpg: Good signature from "Preston Van Loon <preston@prysmaticlabs.com>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 0AE0 051D 647B A3C1 A917  AF40 72E3 3E4D F1A5 036E
+
+https://security.stackexchange.com/questions/147447/gpg-why-is-my-trusted-key-not-certified-with-a-trusted-signature
+
 or build from source
 
 bazel build //beacon-chain:beacon-chain
@@ -106,3 +114,12 @@ lighthouse beacon_node --staking
 lighthouse vc
 Sep 28 14:52:57.300 INFO Enabled validator                       voting_pubkey: 0x89a71e9b5b64c4d362c2b7fcaacb5b6b5a15b11d1d26e2b54b38c241f4d121f09808ea463766408a58b72a80ba54b2a7
 
+// AWAITING ACTIVATION
+https://hackmd.io/@benjaminion/eth2_news/https%3A%2F%2Fhackmd.io%2F%40benjaminion%2Fwnie2_200905 
+"When you register your stake, you include a commitment to a withdrawal key that you hold. The understanding is that there will be a way in Eth2 to prove that you own the corrresponding key, and you will thne get to move the exited stake to an account."
+
+/////////////////////
+
+the genesis of the medalla testnet is set to happen at 1596546008 Unix time or 8 seconds after August 4th at 1pm UTC. August 4 2020 1:00:08 UTC.
+https://beaconscan.com/epoch/0
+Slot 0 at epoch 0.
