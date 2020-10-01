@@ -96,6 +96,8 @@ This is the minimal command to start the beacon node syncing while making availa
 
 	/// what it is (and which one we choose). talk about open-standard
 
+Recall from the last section where we illustrated this new infrastructure zoomorphized (like anthropomorphized but for animals) as a Millipede. The beacon nodes and their chain make up the body, or spine of the system, and the validator nodes are the innumerable feet doing the "footwork" of the system. But, we must be careful with this metaphore. The former "Eth1.0" worm does NOT embed into the body of the Millipede. Rather this Millipede is carnivorous and as it marches across the terrain it collects and processes worms with its feet and eventually passes the result to its mouth. Still, I PROMISE this Millipede is cute and friendly. Bear with me.
+
 	/// how it will eventually fit in
 
 	/// how it currently fits in (phase 0)
