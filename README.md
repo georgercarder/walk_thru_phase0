@@ -90,10 +90,7 @@ screen -dmS lighthouse-beacon-node
 screen -S lighthouse-beacon-node -X stuff 'lighthouse beacon_node --staking'
 ```
 
-Be sure not to forget the `--staking` flag above, otherwise the beacon node will not make available an endpoint for communication by validators.
-
-	/// sync // TODO explain what syncing means!
-
+This is the minimal command to start the beacon node syncing while making available an endpoint for a communication with validators. Like the eth1 node, the syncing process for this eth2 node builds its respective beacon blockchain by validating and combining data from beacon node peers as well as eth1 chain data resulting from the validator Deposit contract so that it may form and maintain a beacon state. Details of these deposit transactions will be ellaborated on in the validator section. Data from these deposit logs must be processed in sequential order. There is added complexity in this node due to the maintaining of a full deposit Merkle Tree and computing updated proofs against other deposits as needed. Fortunately, this "lighthouse" beacon node client points to the default port of our `geth` Goerli node "out of the box". Again, like the eth1 node, the syncing takes some time and could take several hours.
 
 ### Now, we set up the Validator node.
 
