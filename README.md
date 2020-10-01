@@ -68,7 +68,7 @@ If we think of the eth1 nodes and the ethereum protocol before the roll out of t
 
 The "beacon node" implementation we choose for this exploration is Sigma Prime's "Lighthouse: Ethereum 2.0" client. This beacon node will be pointing to the `geth` eth1 node we set up in the last section.
 
-As stated above, a beacon node's duty is to maintain and communicate the beacon chain. From a very high level, the ultimate roll out of Eth2.0 will have the state of this chain will consisting of the membership status of validators, and the accumulated attestations to blocks. Think of an "attestation" as a "vote". But be careful in noting that these attestations are simultaneously votes for a shard block, and proof-of-stake votes for a beacon block. 
+As stated above, a beacon node's duty is to maintain and communicate the beacon chain. From a very high level, the ultimate roll out of Eth2.0 will have the state of this chain consisting of the membership status of validators, and the accumulated attestations to blocks. Think of an "attestation" as a "vote". But be careful in noting that these attestations are simultaneously votes for a shard block, and proof-of-stake votes for a beacon block. 
 
 	/// how it currently fits in (phase 0)
 
