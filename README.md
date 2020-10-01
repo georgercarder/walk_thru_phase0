@@ -32,7 +32,7 @@ There are also auxiliary steps we will take to initialize our "fleet" of nodes.
 
 We will be installing and running these nodes from the `bash` shell of a Linux system. The order in which we set these nodes up matters to a certain extent, so we suggest following the order of this exploration.
 
-First, let's set up the Eth1 node.
+### First, let's set up the Eth1 node.
 
 By "Eth1" node, we mean a machine running the software of the ethereum protocol before the roll-out of this upgrade (as of this writing, a good reference point is go-ethereum <= 1.9.22). Typical node software for this role will validate, store, gossip blocks and pending transactions, and form its own copy of the ethereum blockchain. Currently the mainnet of this paradigm relies on Proof of Work consensus. But there are testnets that rely on alternative consensus schemes such as Goerli testnet which relies on Proof of Authority. When one of these nodes is enabled to be a miner it is incentivized to partake in the additional task of mining blocks, which consists of validating transactions, collating them in blocks, then signing and broadcasting the block in the hopes other nodes will recognize it as valid and include it in their own blockchains as dictated by the consensus mechanism. As we know, one of the great features of the ethereum platform is the distributed EVM runtime environment for smart contracts where the aforementioned transactions record transitions in the state dictated by the smart contract logic. One of these nodes can also be configured to provide an RPC service to clients. This RPC service can be configured to provide both read and write access to the blockchain state. Recall that with every blockchain write, there must be an associated, well-formed transaction.
 
@@ -62,7 +62,7 @@ screen -S goerli -X stuff 'geth --goerli console'
 
 This is the minimal command to start the "Eth1" node syncing to the Goerli testnet. It may take several hours for this node to completely sync. Depending on the blockchain you are syncing you many need to run this on a system with a large amount of storage. On our device, we use a 1TB SSD. Various flags may be used for additional functionality, for instance you may want graphQL, or web-sockets RPC calls or to read/write to a custom data directory. `geth --help` will give you a list of the available flags. It may also be worthwhile to setup a firewall if your node is serving an RPC. A very simple, lightweight, and effective firewall can be setup using `iptables` which is available on many systems.
 
-Next, we set up the Beacon node.
+### Next, we set up the Beacon node.
 
 If we think of the eth1 nodes and the ethereum protocol before the roll out of this upgrade as a worm (no offense "Eth1.0"), then it would make sense to think of beacon nodes and the eth2 protocol as an evolution to a Millipede. But don't get frightened. While the structural complexity is indeed increased, let's imagine this Millipede is cute, approachable and very helpful (kind of like how people somehow managed to make the alien from Aliens cute ???). A beacon node is a machine running "Eth2.0" software that builds and communicates data related to its beacon chain, a blockchain. Unlike the "Eth1.0" chain whose blocks wrap data referencing actual transactions, this beacon chain is composed of blocks wrapping data referencing the consensus mechanism (think meta!) on a sharded configuration of the former "Eth1.0 style" blocks. This includes managing data on the agents that participate in the consensus mechanis, the Validators.
 
@@ -77,7 +77,7 @@ The "beacon node" implementation we choose for this exploration is Sigma Prime's
 	/// sync
 
 
-Now, we set up the Validator node.
+### Now, we set up the Validator node.
 
 	/// what it is (and which one we choose). talk about open-standard
 
@@ -89,7 +89,7 @@ Now, we set up the Validator node.
 
 	// don't run yet
 
-Finally, we work through the auxiliary steps.
+### Finally, we work through the auxiliary steps.
  
 	// keys, tx, and why
 
