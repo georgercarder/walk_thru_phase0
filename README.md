@@ -104,25 +104,25 @@ Once staked, Phase 0 of Eth2.0 protocol expects that the validator has two prima
 
 The validators process the beacon blocks but will NOT process the shard blocks until a later phase. To return to our friend the Millipede, the legs (validators) work with the body (beacon blocks) doing the "footwork", but will not feast on the segments of worms (shard blocks) until a later phase.
  
-	/// build, configure, run notes
-	/// talk about open-standard
+	/// TODO build, configure, run notes
+	/// TODO talk about open-standard
 
 
-	// don't run yet
+	// TODO don't run yet
 
 ### Finally, we work through the auxiliary steps.
  
-	// keys, tx, and why
+	// TODO keys, tx, and why
 
-	// run validator node
-
----
-
-// looking forward
+	// TODO run validator node
 
 ---
 
-// conclusion
+// TODO looking forward
+
+---
+
+// TODO conclusion
 
 
 *Note: The worm vs Millipede metaphore can indeed be extended to accommodate forks in all blockchains of this system but for now we'll avoid a dive into talking about this system within a higher-dimensional space. The reader is welcome to run with it in the comments... :)*
