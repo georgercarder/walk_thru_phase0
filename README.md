@@ -30,7 +30,7 @@ We will be setting up 3 nodes:
 
 There are also auxiliary steps we will take to initialize our "fleet" of nodes. 
 
-We will be installing and running these nodes from the `bash` shell of a Linux system. The order in which we set these nodes up matters to a certain extent, so we suggest following the order of this exploration.
+We will be installing and running these nodes from the `bash` shell of a Linux system. All nodes will be run under the same host. The order in which we set these nodes up matters to a certain extent, so we suggest following the order of this exploration.
 
 ### First, let's set up the Eth1 node.
 
@@ -68,7 +68,7 @@ If we think of the eth1 nodes and the ethereum protocol before the roll out of t
 
 The "beacon node" implementation we choose for this exploration is Sigma Prime's "Lighthouse: Ethereum 2.0" client. This beacon node will be pointing to the `geth` eth1 node we set up in the last section.
 
-	/// TODO how it will eventually fit in
+As stated above, a beacon node's duty is to maintain and communicate the beacon chain. The ultimate roll out of Eth2.0 will have from a high level, the state of this chain will consist of the membership status of validators, and the accumulated attestations to blocks. Think of an "attestation" as a "vote". But be careful in noting that these attestations are simultaneously votes for a shard block, and proof-of-stake votes for a beacon block. 
 
 	/// how it currently fits in (phase 0)
 
