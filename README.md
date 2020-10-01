@@ -56,15 +56,15 @@ This clones the `go-ethereum` repo, checks out to the latest release, and builds
 It is advised to run the node in a "screen" so we may detach and do other work in the same console.
 
 ```
-screen -dmS goerli
-screen -S goerli -X stuff 'geth --goerli console'
+screen -dmS gethnode-goerli
+screen -S gethnode-goerli -X stuff 'geth --goerli console'
 ```
 
 This is the minimal command to start the "Eth1" node syncing to the Goerli testnet. It may take several hours for this node to completely sync. Depending on the blockchain you are syncing you many need to run this on a system with a large amount of storage. On our device, we use a 1TB SSD. Various flags may be used for additional functionality, for instance you may want graphQL, or web-sockets RPC calls or to read/write to a custom data directory. `geth --help` will give you a list of the available flags. It may also be worthwhile to setup a firewall if your node is serving an RPC. A very simple, lightweight, and effective firewall can be setup using `iptables` which is available on many systems.
 
 ### Next, we set up the Beacon node.
 
-If we think of the eth1 nodes and the ethereum protocol before the roll out of this upgrade as a worm (no offense "Eth1.0"), then it would make sense to think of beacon nodes and the eth2 protocol as an evolution to a Millipede. But don't get frightened. While the structural complexity is indeed increased, let's imagine this Millipede is cute, approachable and very helpful (kind of like how people somehow managed to make the alien from Aliens cute ???). A beacon node is a machine running "Eth2.0" software that builds and communicates data related to its beacon chain, a blockchain. Unlike the "Eth1.0" chain whose blocks wrap data referencing actual transactions, this beacon chain is composed of blocks wrapping data referencing the consensus mechanism (think meta!) on a sharded configuration of the former "Eth1.0 style" blocks. This includes managing data on the agents that participate in the consensus mechanis, the Validators.
+If we think of the eth1 nodes and the ethereum protocol before the roll out of this upgrade as a worm (no offense "Eth1.0"), then it would make sense to think of beacon nodes and the eth2 protocol as an evolution to a Millipede. But don't get frightened. While the structural complexity is indeed increased, let's imagine this Millipede is cute, approachable and very helpful (kind of like how people somehow managed to make the alien from Aliens cute ???). A beacon node is a machine running "Eth2.0" software that builds and communicates data related to its beacon chain, a blockchain. Unlike the "Eth1.0" chain whose blocks wrap data referencing actual transactions, this beacon chain is composed of blocks wrapping data referencing the consensus mechanism (think meta!) on a sharded configuration of the former "Eth1.0 style" blocks. This includes managing data on the agents that participate in the consensus mechanism, the Validators.
 
 The "beacon node" implementation we choose for this exploration is Sigma Prime's "Lighthouse: Ethereum 2.0" client. This beacon node will be pointing to the `geth` eth1 node we set up in the last section.
 
