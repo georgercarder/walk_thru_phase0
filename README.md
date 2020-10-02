@@ -138,7 +138,7 @@ Then we run
 ./deposit.sh
 ```
 
-This will guide us through the construction of keys and deposit data for our validator node and save the artifacts to a `validator_keys` folder within the working directory.
+This script will guide us through the construction of keys and deposit data for our validator node and save the artifacts to a `validator_keys` folder within the working directory.
 
 The `pubkey` is the validator public key.
 
@@ -148,15 +148,28 @@ The `withdrawal_credentials` is a commitment to a withdrawal public keyset that 
 
 The `deposit_data_root` is a value used to check the integrity of the relationshipt between the `pubkey`, `signature`, and `withdrawal_credentials`.
 
-Fortunately, the guide that we have been loosely following (the Eth2 Launch Pad for the Medalla testnet), provides as one of its steps a dApp interface that will make this call to `deposit`, setting as parameters entries from the "deposit data" we just generated. We simply need to drag and drop the `deposit_data-*.json` file into their UI.
-
-To complete the transaction we need // TODO METAMASK DETAILS
+Fortunately, the guide that we have been loosely following (the Eth2 Launch Pad for the Medalla testnet), provides as one of its steps a dApp interface that will make this call to `deposit`, setting as parameters entries from the "deposit data" we just generated. We simply need to drag and drop the `deposit_data-*.json` file into their UI, and complete the transaction using Metamask. Be sure to have a wallet with Geth tokens set up in Metamask. This wallet is unrelated to any of the keysets we've discussed so far. The only stipulation is that this transaction sends the amount of N * 32ETH where N is the number of validators you indicated in the `./deposit.sh` step. This social faucet is a great way to get 32+ Geth https://faucet.goerli.mudit.blog/.
 
 // TODO screenshot
-	
-// TODO keys, tx, and why
 
-	// TODO run validator node
+Now we start our validator node!
+
+First we must import our validator keyset
+
+```
+lighthouse account validator import --directory <path_to>/validator_keys
+```
+
+Then we start our validator node
+
+```
+lighthouse vc
+```
+
+Since this validator node is under the same host as our beacon node, this application is configured so the validator node points to the beacon node api "out of the box".
+
+// screen shot
+
 
 	// TODO trace through etherscan, beaconscan
 
