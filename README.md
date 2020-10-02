@@ -179,6 +179,8 @@ As promised, now all our 3 entities are up and running, and our eth1 node and be
 
 // TODO SCREENSHOT
 
+![all_logs.png](img/all_logs.png?raw=true)
+
 But we see from our validator the persistently repeating log `Awaiting activation`.
 
 // TODO SCREENSHOT
