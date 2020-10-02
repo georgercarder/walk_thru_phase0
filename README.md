@@ -18,7 +18,7 @@ The Eth2.0 upgrade is to be rolled out in phases. The large dedicated community 
 
 - Phase 2: fully formed shards
 
-In this exploration we will focus on the current phase, Phase 0. Our goal is to learn about each node in this upgrade. We'll do this by building and running the respective software, describing its role in the ultimate roll-out (Phase 2), its functionality specific to this phase (Phase 0), and actually tracing its interactions within the system.
+In this exploration we will focus on the current phase, Phase 0. Our goal is to learn about each node in this upgrade. We'll do this by building and running the respective software, describing both its role in the ultimate roll-out (Phase 2) and its functionality specific to this phase (Phase 0), and actually tracing its interactions within the system.
 
 The guide we are following is the Eth2 Launch Pad for the Medalla testnet .
 
