@@ -3,7 +3,9 @@
 // TODO INCLUDE LINKS, SCREENSHOTS, AND PICTURES
 
 // TODO EDIT FOR typos, brain-os, spelling, grammar
+
 // TODO Goerli needs umlaut
+
 // TODO review all "Eth1.0" vs eth1 labels (same for 2.0)
 
 With the greatly anticipated release of various beacon-chain testnets we were curious to get a hands-on introduction to the various entities in the Eth 2.0 protocol. There is a great deal written online about Eth 2.0 and facets of its various phases so we figure the simplest way for us to get a unified view into Phase 0 of this upgrade is to just follow our nose and trace the interactions of some existing clients. 
@@ -112,21 +114,37 @@ Once staked, Phase 0 of Eth2.0 protocol expects that the validator has two prima
 
 For Phase 0, the validators process the beacon blocks but will NOT process the shard blocks until a later phase. To return to our friend the Millipede, the legs (validators) work with the body (beacon blocks) doing the "footwork", but will not feast on the segments of worms (shard blocks) until a later phase. Since Phase 0 does not have shards there is not currently a way to define shard committees. To account for this, additional programmatic safeguards are put into the Phase 0 protocol to provide attestation subnet stability. 
  
-An open-standard for an API interface exposed by a beacon node has been in the works to facilitate Phase 0. However, for this exploration we err on the side of caution and choose our validator node implementation to use the same software as our beacon node implementation, Sigma Prime's "Lighthouse: Ethereum 2.0" client. This way we do not need to install any additional software or debug interoperability issues. Unlike the other sections of this exploration, we will put off running this validator node until we complete other steps in the following "auxiliary" section. There, the explicit commands to run the validator node will be stated after other essential tasks are completed.
+An open-standard for an API interface exposed by a beacon node has been in the works to facilitate Phase 0. However, for this exploration we err on the side of caution and choose our validator node implementation to use the same software as our beacon node implementation, Sigma Prime's "Lighthouse: Ethereum 2.0" client. This way we do not need to install any additional software or debug interoperability issues. Unlike the other sections of this exploration, we will put off running this validator node until we complete other steps in the sequel "auxiliary" section. There, the explicit commands to run the validator node will be stated after other essential tasks are completed.
 
 ### Finally, we work through the auxiliary steps.
  
 As outlined in the introduction, we were tasked with setting up 3 entities. So far we have installed the software for all three, but have only activated two of the three. Activation for both the eth1, and the beacon node, was straight-forward and amounted to calling an executable with specific flags. The nodes bootstrapped into their respective p2p networks so they may gossip data to build their respective datastores. Other than running their software, these two nodes do not have any additional barriers to act as their role in their respective network. This is not the case for the validator node. As we saw in the validator section, the validator will not be recognized as a valid, active participant unless a deposit transaction is made to the appropriate smart contract on its behalf with its receipt processed by the beacon chain.
 
-// TODO generate deposit data here
-
 For Phase 0, the validator deposits must be made to the `DepositContract` deployed to the Goerli testnet. The specific member function that needs to be called is the `deposit` function whose input parameters are `pubkey`, `withdrawal_credentials`, `signature`, and `deposit_data_root`. Let's call these values the "deposit data". It is currently not clear in this context how exactly we are to construct the deposit data. Fortunately the `eth2.0-deposit-cli` can generate these values for those who are not keen at scripting their construction themselves. We will use this tool to prepare both the deposit data as well as the keystore for our validator. We will also briefly explain what each of these values are in this context.
 
-// TODO `eth2.0-deposit-cli` use here
+We download, build and install the `eth2.0-deposit-cli`
+
+```
+git clone https://github.com/ethereum/eth2.0-deposit-cli.git && cd eth2.0-deposit-cli
+latest_tag=$(git describe --tags)
+git checkout $latest_tag
+pip3 install -r requirements.txt
+python setup.py install
+```
+
+Then we run 
+
+```
+./deposit.sh
+```
+
+This will guide us through the construction of keys and deposit data for our validator node and save the artifacts to a `validator_keys` folder within the working directory.
 
 // TODO deposit data explanation here
 
 Fortunately, the guide that we have been loosely following (the Eth2 Launch Pad for the Medalla testnet), provides as one of its steps a dApp interface that will make this call to `deposit`, setting as parameters entries from the "deposit data" we just generated. 
+
+// TODO screenshot
 	
 // TODO keys, tx, and why
 
