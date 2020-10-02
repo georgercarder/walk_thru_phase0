@@ -36,6 +36,8 @@ We will be setting up 3 entities:
 
 There are also auxiliary steps we will take to initialize this "fleet". 
 
+We also "tie it all together".
+
 We will be installing and running these nodes from the `bash` shell of a Linux system. All nodes will be run under the same host. The order in which we set these nodes up matters to a certain extent, so we suggest following the order of this exploration.
 
 ### First, let's set up the Eth1 node.
@@ -172,12 +174,9 @@ Since this validator node is under the same host as our beacon node, this applic
 
 // screen shot
 
+### Tying it all together
 
 	// TODO trace through etherscan, beaconscan
-
----
-
-// TODO looking forward
 
 ---
 
