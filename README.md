@@ -1,5 +1,9 @@
 #### Eth 2.0: A walk through Phase 0
 
+// UMLAUT TEST
+
+Hell&oum
+
 // TODO INCLUDE LINKS, AND PICTURES
 
 // TODO EDIT FOR typos, brain-os, grammar
