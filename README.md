@@ -20,7 +20,7 @@ The Eth2.0 upgrade is to be rolled out in phases. The large dedicated community 
 
 In this exploration we will focus on the current phase, Phase 0. Our goal is to learn about each entity in this upgrade. We'll do this by building and running the respective software, describing both its role in the ultimate roll-out (Phase 2) and its functionality specific to this phase (Phase 0), and actually tracing its interactions within the system.
 
-The guide we are following is the Eth2 Launch Pad for the Medalla testnet .
+The guide we are loosely following is the Eth2 Launch Pad for the Medalla testnet.
 
 We will be setting up 3 entities:
 
@@ -114,7 +114,11 @@ An open-standard for an API interface exposed by a beacon node has been in the w
 
 ### Finally, we work through the auxiliary steps.
  
-As outlined in the introduction, we were tasked with setting up 3 entities. So far we have installed the software for all three, but have only activate two of the three. Activation for both the eth1, and the beacon node, was straight-forward and amounted to calling an executable with specific flags. The nodes bootstrapped into their respective p2p networks so they may gossip data to build their respective datastores. Other than running their software, these two nodes do not have any additional barriers to act as their role in their respective network. This is not the case for the validator node, for as we saw in the validator section, the validator will not be recognized as a valid, active participant unless deposit transaction is made to the appropriate smart contract on its behalf and its receipt processed by the beacon chain.
+As outlined in the introduction, we were tasked with setting up 3 entities. So far we have installed the software for all three, but have only activated two of the three. Activation for both the eth1, and the beacon node, was straight-forward and amounted to calling an executable with specific flags. The nodes bootstrapped into their respective p2p networks so they may gossip data to build their respective datastores. Other than running their software, these two nodes do not have any additional barriers to act as their role in their respective network. This is not the case for the validator node, for as we saw in the validator section, the validator will not be recognized as a valid, active participant unless a deposit transaction is made to the appropriate smart contract on its behalf with its receipt processed by the beacon chain.
+
+// TODO generate deposit data here
+
+Fortunately, the guide that We have been loosely following (the Eth2 Launch Pad for the Medalla testnet), provides as one of its steps a dApp interface that will make this call to `deposit` setting as parameters entries from the "deposit data" we just generated. 
 	
 // TODO keys, tx, and why
 
@@ -131,4 +135,4 @@ As outlined in the introduction, we were tasked with setting up 3 entities. So f
 // TODO conclusion
 
 
-*Note: The worm vs Millipede metaphor can indeed be extended to accommodate forks in all blockchains of this system but for now we'll avoid a dive into talking about this system within a higher-dimensional space. The reader is welcome to run with it in the comments... :)*
+*Note: The worm vs Millipede metaphor can indeed be extended to accommodate forks in all blockchains of this system but for now we'll avoid a dive into talking about this system within a futuristic higher-dimensional space. The reader is welcome to run with it in the comments... :)*
