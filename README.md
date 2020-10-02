@@ -36,7 +36,6 @@ We will be setting up 3 entities:
 
 There are also auxiliary steps we will take to initialize this "fleet". 
 
-
 We will be installing and running these nodes from the `bash` shell of a Linux system. All nodes will be run under the same host. The order in which we set these nodes up matters to a certain extent, so we suggest following the order of this exploration.
 
 ### First, let's set up the Eth1 node.
@@ -69,7 +68,7 @@ screen -S gethnode-goerli -X stuff 'geth --goerli console'
 
 This is the minimal command to start the "Eth1" node syncing to the Goerli testnet. Recall that syncing for an eth1 node consists of importing, validating, and assembling blocks into a locally stored blockchain where the blocks wrap data referencing actual transactions. It may take several hours for this node to completely sync. Depending on the blockchain you are syncing you many need to run this on a system with a large amount of storage. On our device, we use a 1TB SSD. Various flags may be used for additional functionality, for instance you may want graphQL, or web-sockets RPC calls or to read/write to a custom data directory. `geth --help` will give you a list of the available flags. It may also be worthwhile to setup a firewall if your node is serving an RPC. A very simple, lightweight, and effective firewall can be setup using `iptables` which is available on many systems.
 
-// TODO screenshot
+![goerli_logs.png](img/goerli_logs.png?raw=true)
 
 ### Next, we set up the Beacon node.
 
@@ -101,7 +100,7 @@ screen -S lighthouse-beacon-node -X stuff 'lighthouse beacon_node --staking'
 
 This is the minimal command to start the beacon node syncing while making available an endpoint for communication with validators. Fortunately, this "lighthouse" beacon node client points to the default port of our `geth` Goerli node "out of the box". Again, like the eth1 node, the syncing could take several hours. Like the eth1 node, the syncing process for this eth2 node builds its respective beacon blockchain by validating and combining data from beacon node peers as well as eth1 chain data resulting from the validator Deposit contract so that it may form and maintain a beacon state. Details of these deposit transactions will be elaborated on in the validator section. Data from these deposit logs must be processed in sequential order. There is added complexity in this node due to the maintaining of a full deposit Merkle Tree and computing updated proofs against other deposits as needed. 
 
-// TODO screenshot
+![beacon_logs.png](img/beacon_logs.png?raw=true)
 
 ### Now, we set up the Validator node.
 
@@ -153,7 +152,7 @@ But it is not necessary that the typical user know the meaning of these values.
 
 Fortunately, the guide that we have been loosely following (the Eth2 Launch Pad for the Medalla testnet), provides as one of its steps a dApp interface that will make this call to `deposit`, setting as parameters entries from the "deposit data" we just generated. We simply need to drag and drop the `deposit_data-*.json` file into their UI, and complete the transaction using Metamask. Be sure to have a wallet with Geth tokens set up in Metamask. This wallet is unrelated to any of the keysets we've discussed so far. The only stipulation is that this transaction sends the amount of N * 32 Geth where N is the number of validators you indicated in the `./deposit.sh` step. This social faucet is a great way to get 32+ Geth https://faucet.goerli.mudit.blog/.
 
-// TODO screenshot
+![launchpad_dragndrop.png](img/launchpad_dragndrop.png?raw=true)
 
 Now we start our validator node!
 
@@ -170,8 +169,6 @@ lighthouse vc
 ```
 
 Since this validator node is under the same host as our beacon node, this application is configured so the validator node points to the beacon node api "out of the box".
-
-// screen shot
 
 ### Let's review our system 
 
