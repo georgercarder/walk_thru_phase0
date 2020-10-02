@@ -3,6 +3,8 @@
 // TODO INCLUDE LINKS, SCREENSHOTS, AND PICTURES
 
 // TODO EDIT FOR typos, brain-os, spelling, grammar
+// TODO Goerli needs umlaut
+// TODO review all "Eth1.0" vs eth1 labels (same for 2.0)
 
 With the greatly anticipated release of various beacon-chain testnets we were curious to get a hands-on introduction to the various entities in the Eth 2.0 protocol. There is a great deal written online about Eth 2.0 and facets of its various phases so we figure the simplest way for us to get a unified view into Phase 0 of this upgrade is to just follow our nose and trace the interactions of some existing clients. 
 
@@ -114,11 +116,13 @@ An open-standard for an API interface exposed by a beacon node has been in the w
 
 ### Finally, we work through the auxiliary steps.
  
-As outlined in the introduction, we were tasked with setting up 3 entities. So far we have installed the software for all three, but have only activated two of the three. Activation for both the eth1, and the beacon node, was straight-forward and amounted to calling an executable with specific flags. The nodes bootstrapped into their respective p2p networks so they may gossip data to build their respective datastores. Other than running their software, these two nodes do not have any additional barriers to act as their role in their respective network. This is not the case for the validator node, for as we saw in the validator section, the validator will not be recognized as a valid, active participant unless a deposit transaction is made to the appropriate smart contract on its behalf with its receipt processed by the beacon chain.
+As outlined in the introduction, we were tasked with setting up 3 entities. So far we have installed the software for all three, but have only activated two of the three. Activation for both the eth1, and the beacon node, was straight-forward and amounted to calling an executable with specific flags. The nodes bootstrapped into their respective p2p networks so they may gossip data to build their respective datastores. Other than running their software, these two nodes do not have any additional barriers to act as their role in their respective network. This is not the case for the validator node. As we saw in the validator section, the validator will not be recognized as a valid, active participant unless a deposit transaction is made to the appropriate smart contract on its behalf with its receipt processed by the beacon chain.
 
 // TODO generate deposit data here
 
-Fortunately, the guide that We have been loosely following (the Eth2 Launch Pad for the Medalla testnet), provides as one of its steps a dApp interface that will make this call to `deposit` setting as parameters entries from the "deposit data" we just generated. 
+For Phase 0, the validator deposits must be made to the `DepositContract` deployed to the Goerli testnet. The specific member function that needs to be called is the `deposit` function whose input parameters are `pubkey`, `withdrawal_credentials`, `signature`, and `deposit_data_root`. Let's call these values the "deposit data". It is currently not clear in this context where exactly we are to construct the deposit data. Fortunately the `eth2.0-deposit-cli` can generate these values for those who are not keen at scripting their construction themselves. We will use this tool to prepare both the deposit data as well as the keystore for our validator. We will also briefly explain what each of these values are in this context.
+
+Fortunately, the guide that we have been loosely following (the Eth2 Launch Pad for the Medalla testnet), provides as one of its steps a dApp interface that will make this call to `deposit`, setting as parameters entries from the "deposit data" we just generated. 
 	
 // TODO keys, tx, and why
 
