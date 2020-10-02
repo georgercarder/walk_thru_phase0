@@ -10,6 +10,10 @@ With the greatly anticipated release of various beacon-chain testnets we were cu
 
 This is an Ethereum blog, so we assume the reader is familiar with Ethereum as a platform as well as the motivation for the upgrade to Eth 2.0. If not, check out these links to get up to speed.
 
+[Ethereum.org website](https://ethereum.org/en/)
+
+[Ethereum 2.0 overview](https://ethereum.org/en/eth2/)
+
 The Eth2.0 upgrade is to be rolled out in phases. The large dedicated community that has assembled to design and engineer this upgrade has broken the roll-out into 4 phases:
 
 - Phase 0: the beacon chain (the current phase)
@@ -22,7 +26,7 @@ The Eth2.0 upgrade is to be rolled out in phases. The large dedicated community 
 
 In this exploration we will focus on the current phase, Phase 0. Our goal is to learn about each entity in this upgrade. We'll do this by building and running the respective software, describing both its role in the ultimate roll-out (Phase 2) and its functionality specific to this phase (Phase 0), and actually tracing its interactions within the system.
 
-The guide we are loosely following is the Eth2 Launch Pad for the Medalla testnet.
+The guide we are loosely following is the [Eth2 Launch Pad for the Medalla testnet](https://medalla.launchpad.ethereum.org/).
 
 We will be setting up 3 entities:
 
@@ -34,13 +38,13 @@ We will be setting up 3 entities:
 
 There are also auxiliary steps we will take to initialize this "fleet". 
 
-We will be installing and running these nodes from the `bash` shell of a Linux system. All nodes will be run under the same host. The order in which we set these nodes up matters to a certain extent, so we suggest following the order of this exploration.
+We will be installing and running these nodes from the [`bash` shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) of a [Linux\* system](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pestaola.gr%2Fimg1%2Flinus-torvalds-vs-richard-stallman.jpg&f=1&nofb=1). All nodes will be run under the same host. The order in which we set these nodes up matters to a certain extent, so we suggest following the order of this exploration.
 
 ### First, let's set up the Eth1 node.
 
-By "Eth1" node, we mean a machine running the software of the ethereum protocol before the roll-out of this upgrade (as of this writing, a good reference point is go-ethereum <= 1.9.22). Typical node software for this role will validate, store, gossip blocks and pending transactions, and form its own copy of the ethereum blockchain. Currently the mainnet of this paradigm relies on Proof of Work consensus. But there are testnets that rely on alternative consensus schemes such as G&ouml;rli testnet which relies on Proof of Authority. When one of these nodes is enabled to be a miner it is incentivized to partake in the additional task of mining blocks, which consists of validating transactions, collating them in blocks, then signing and broadcasting the block in the hopes other nodes will recognize it as valid and include it in their own blockchains as dictated by the consensus mechanism. As we know, one of the great features of the ethereum platform is the distributed EVM runtime environment for smart contracts where the aforementioned transactions induce transitions in the state dictated by the smart contract logic. One of these nodes can also be configured to provide an RPC service to clients. This RPC service can be configured to provide both read and nuanced write access to the blockchain state. Recall that with every blockchain state write, there must be an associated valid transaction.
+By "Eth1" node, we mean a machine running the software of the ethereum protocol before the roll-out of this upgrade (as of this writing, a good reference point is [go-ethereum <= 1.9.22](https://github.com/ethereum/go-ethereum/releases/tag/v1.9.22)). Typical node software for this role will validate, store, gossip blocks and pending transactions, and form its own copy of the ethereum blockchain. Currently the [mainnet](https://etherscan.io/) of this paradigm relies on [Proof of Work (PoW) consensus](https://www.geeksforgeeks.org/proof-of-work-pow-consensus/). But there are testnets that rely on alternative consensus schemes such as [G&ouml;rli testnet](https://goerli.net/) which relies on [Proof of Authority](https://forum.openzeppelin.com/t/proof-of-authority/3577). When one of these nodes is enabled to be a miner it is incentivized to partake in the additional task of mining blocks, which consists of validating transactions, collating them in blocks, then signing and broadcasting the block in the hopes other nodes will recognize it as valid and include it in their own blockchains as dictated by the consensus mechanism. As we know, one of the great features of the ethereum platform is the distributed EVM runtime environment for smart contracts where the aforementioned transactions induce transitions in the state dictated by the smart contract logic. One of these nodes can also be configured to provide an RPC service to clients. This RPC service can be configured to provide both read and nuanced write access to the blockchain state. Recall that with every blockchain state write, there must be an associated valid transaction.
 
-The Eth1 node implementation we choose is `go-ethereum` (`geth`) pointing to the "G&ouml;rli" testnet since this is the blockchain the Medalla testnet refers to. 
+The Eth1 node implementation we choose is [`go-ethereum` (`geth`)](https://github.com/ethereum/go-ethereum) pointing to the "G&ouml;rli" testnet since this is the blockchain the Medalla testnet refers to. 
 
 In the former paradigm ("Eth 1.0") we treated the "Eth1" nodes and their associated blockchain as first-class members of the system. They reach consensus on the global state of the system, provide its data to clients, and allow clients to update the state through valid transactions. As stated above, the "Eth 1.0" mainnet uses PoW as its consensus mechanism. But the design goals of Eth2.0 will relegate the "Eth1" nodes and their associated blockchain to a "shard" within a greater system, where the consensus will be reached by Proof of Stake.
 
@@ -193,5 +197,7 @@ We see here that despite the transaction was made Sep-28-2020, on Oct-2-2020 val
 ![validator_pending.png](img/validator_pending.png?raw=true)
 
 We believe a deeper exploration into the mechanics of the activation process is in store. We also think it will be very interesting to trace the details of the validator's activities once it is activated. We have learned a lot here in that we have covered some key players in this protocol upgrade and how they are expected to behave in this current phase. It does seem worthwhile to continue this exploration but we will wait until the prop of an activated validator is available. According to these logs it should be just a few days. *Stay tuned for the second part of this exploration where we dive more deeply into the validator activation process!*
+
+*\* GNU/Linux system
 
 *Note: The worm vs Millipede metaphor can indeed be extended to accommodate forks in all blockchains of this system but for now we'll avoid a dive into talking about this system within a futuristic higher-dimensional space. The reader is welcome to run with it in the comments... :)*
