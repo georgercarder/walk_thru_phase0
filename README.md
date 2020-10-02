@@ -140,9 +140,17 @@ Then we run
 
 This will guide us through the construction of keys and deposit data for our validator node and save the artifacts to a `validator_keys` folder within the working directory.
 
-// TODO deposit data explanation here
+The `pubkey` is the validator public key.
 
-Fortunately, the guide that we have been loosely following (the Eth2 Launch Pad for the Medalla testnet), provides as one of its steps a dApp interface that will make this call to `deposit`, setting as parameters entries from the "deposit data" we just generated. 
+The `signature` is a proof of possession (a BLS12-381) signature. 
+
+The `withdrawal_credentials` is a commitment to a withdrawal public keyset that enables a validator to move their balance (in phases 1/2).
+
+The `deposit_data_root` is a value used to check the integrity of the relationshipt between the `pubkey`, `signature`, and `withdrawal_credentials`.
+
+Fortunately, the guide that we have been loosely following (the Eth2 Launch Pad for the Medalla testnet), provides as one of its steps a dApp interface that will make this call to `deposit`, setting as parameters entries from the "deposit data" we just generated. We simply need to drag and drop the `deposit_data-*.json` file into their UI.
+
+To complete the transaction we need // TODO METAMASK DETAILS
 
 // TODO screenshot
 	
