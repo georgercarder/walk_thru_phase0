@@ -150,7 +150,7 @@ The `deposit_data_root` is a value used to check the integrity of the relationsh
 
 But it is not necessary that the typical user know the meaning of these values.
 
-Fortunately, the guide that we have been loosely following (the Eth2 Launch Pad for the Medalla testnet), provides as one of its steps a dApp interface that will make this call to `deposit`, setting as parameters entries from the "deposit data" we just generated. We simply need to drag and drop the `deposit_data-*.json` file into their UI, and complete the transaction using Metamask. Be sure to have a wallet with Geth tokens set up in Metamask. This wallet is unrelated to any of the keysets we've discussed so far. The only stipulation is that this transaction sends the amount of N * 32ETH where N is the number of validators you indicated in the `./deposit.sh` step. This social faucet is a great way to get 32+ Geth https://faucet.goerli.mudit.blog/.
+Fortunately, the guide that we have been loosely following (the Eth2 Launch Pad for the Medalla testnet), provides as one of its steps a dApp interface that will make this call to `deposit`, setting as parameters entries from the "deposit data" we just generated. We simply need to drag and drop the `deposit_data-*.json` file into their UI, and complete the transaction using Metamask. Be sure to have a wallet with Geth tokens set up in Metamask. This wallet is unrelated to any of the keysets we've discussed so far. The only stipulation is that this transaction sends the amount of N * 32 Geth where N is the number of validators you indicated in the `./deposit.sh` step. This social faucet is a great way to get 32+ Geth https://faucet.goerli.mudit.blog/.
 
 // TODO screenshot
 
