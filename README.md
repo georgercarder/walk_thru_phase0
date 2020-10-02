@@ -18,11 +18,11 @@ The Eth2.0 upgrade is to be rolled out in phases. The large dedicated community 
 
 - Phase 2: fully formed shards
 
-In this exploration we will focus on the current phase, Phase 0. Our goal is to learn about each node in this upgrade. We'll do this by building and running the respective software, describing both its role in the ultimate roll-out (Phase 2) and its functionality specific to this phase (Phase 0), and actually tracing its interactions within the system.
+In this exploration we will focus on the current phase, Phase 0. Our goal is to learn about each entity in this upgrade. We'll do this by building and running the respective software, describing both its role in the ultimate roll-out (Phase 2) and its functionality specific to this phase (Phase 0), and actually tracing its interactions within the system.
 
 The guide we are following is the Eth2 Launch Pad for the Medalla testnet .
 
-We will be setting up 3 nodes:
+We will be setting up 3 entities:
 
 - eth1 node
 
@@ -30,7 +30,7 @@ We will be setting up 3 nodes:
 
 - validator node
 
-There are also auxiliary steps we will take to initialize our "fleet" of nodes. 
+There are also auxiliary steps we will take to initialize this "fleet". 
 
 We will be installing and running these nodes from the `bash` shell of a Linux system. All nodes will be run under the same host. The order in which we set these nodes up matters to a certain extent, so we suggest following the order of this exploration.
 
@@ -114,7 +114,9 @@ An open-standard for an API interface exposed by a beacon node has been in the w
 
 ### Finally, we work through the auxiliary steps.
  
-	// TODO keys, tx, and why
+As outlined in the introduction, we were to set up 3 entities. So far we have installed the software for all three, but have only activate two of the three. Activation for both the eth1, and the beacon node, was straight-forward and amounted to calling an executable with specific flags. The nodes bootstrapped into their respective p2p networks so they may gossip data to build their respective datastores. Other than running their software, these two nodes do not have any additional barriers to entry for them to act as their role in their respective network. This is not the case for the validator node, for as we saw in the validator section, the validator will not be recognized as a valid, active participant until its corresponding deposit transaction is made to the appropriate smart contract and its receipt processed by the beacon chain.
+	
+// TODO keys, tx, and why
 
 	// TODO run validator node
 
