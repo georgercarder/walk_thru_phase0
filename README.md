@@ -1,8 +1,8 @@
 #### Eth 2.0: A walk through Phase 0
 
-// TODO INCLUDE LINKS, SCREENSHOTS, AND PICTURES
+// TODO INCLUDE LINKS, AND PICTURES
 
-// TODO EDIT FOR typos, brain-os, spelling, grammar
+// TODO EDIT FOR typos, brain-os, grammar
 
 // TODO Goerli needs umlaut
 
@@ -146,7 +146,7 @@ The `signature` is a proof of possession (a BLS12-381) signature.
 
 The `withdrawal_credentials` is a commitment to a withdrawal public keyset that enables a validator to move their balance (in phases 1/2).
 
-The `deposit_data_root` is a value used to check the integrity of the relationshipt between the `pubkey`, `signature`, and `withdrawal_credentials`.
+The `deposit_data_root` is a value used to check the integrity of the relationship between the `pubkey`, `signature`, and `withdrawal_credentials`.
 
 But it is not necessary that the typical user know the meaning of these values.
 
@@ -168,7 +168,7 @@ Then we start our validator node
 lighthouse vc
 ```
 
-Since this validator node is under the same host as our beacon node, this application is configured so the validator node points to the beacon node api "out of the box".
+Since this validator node is under the same host as our beacon node, this application is configured so the validator node points to the beacon node API "out of the box".
 
 ### Let's review our system 
 
