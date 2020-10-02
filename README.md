@@ -120,7 +120,11 @@ As outlined in the introduction, we were tasked with setting up 3 entities. So f
 
 // TODO generate deposit data here
 
-For Phase 0, the validator deposits must be made to the `DepositContract` deployed to the Goerli testnet. The specific member function that needs to be called is the `deposit` function whose input parameters are `pubkey`, `withdrawal_credentials`, `signature`, and `deposit_data_root`. Let's call these values the "deposit data". It is currently not clear in this context where exactly we are to construct the deposit data. Fortunately the `eth2.0-deposit-cli` can generate these values for those who are not keen at scripting their construction themselves. We will use this tool to prepare both the deposit data as well as the keystore for our validator. We will also briefly explain what each of these values are in this context.
+For Phase 0, the validator deposits must be made to the `DepositContract` deployed to the Goerli testnet. The specific member function that needs to be called is the `deposit` function whose input parameters are `pubkey`, `withdrawal_credentials`, `signature`, and `deposit_data_root`. Let's call these values the "deposit data". It is currently not clear in this context how exactly we are to construct the deposit data. Fortunately the `eth2.0-deposit-cli` can generate these values for those who are not keen at scripting their construction themselves. We will use this tool to prepare both the deposit data as well as the keystore for our validator. We will also briefly explain what each of these values are in this context.
+
+// TODO `eth2.0-deposit-cli` use here
+
+// TODO deposit data explanation here
 
 Fortunately, the guide that we have been loosely following (the Eth2 Launch Pad for the Medalla testnet), provides as one of its steps a dApp interface that will make this call to `deposit`, setting as parameters entries from the "deposit data" we just generated. 
 	
