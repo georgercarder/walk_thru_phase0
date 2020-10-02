@@ -2,7 +2,7 @@
 
 // UMLAUT TEST
 
-Hell&oum
+Hell&ouml;
 
 // TODO INCLUDE LINKS, AND PICTURES
 
