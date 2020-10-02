@@ -177,31 +177,25 @@ Since this validator node is under the same host as our beacon node, this applic
 
 As promised, now all our 3 entities are up and running, and our eth1 node and beacon node are fully synced.
 
-// TODO SCREENSHOT
-
 ![all_logs.png](img/all_logs.png?raw=true)
 
 But we see from our validator the persistently repeating log `Awaiting activation`.
 
-// TODO SCREENSHOT
+![validator_logs.png](img/validator_logs.png?raw=true)
 
 Let's trace our setup from the vantage point of the block explorers for both the Goerli and beacon blockchains.
 
 For this exploration, I used a fresh wallet for the Metamask transaction:
 
-// TODO SCREENSHOT
+![eth_account.png](img/eth_account.png?raw=true)
 
-The only outbound transaction from this address is to the Medalla Beacon Contract which we made in the last section:
+The only outbound transaction from this address is to the Medalla Beacon Contract which we made in the last section. The validator public key associated with this transaction is noted in the Beacon Chain Deposit entry:
 
-// TODO SCREENSHOT
-
-The validator public key associated with this transaction is noted in the Beacon Chain Deposit entry:
-
-// TODO SCREENSHOT
+![depost_tx_success.png](img/deposit_tx_success.png?raw=true)
 
 We see here that despite the transaction was made Sep-28-2020, on Oct-2-2020 validator status is that it is awaiting activation.
 
-// TODO SCREENSHOT
+![validator_pending.png](img/validator_pending.png?raw=true)
 
 We believe a deeper exploration into the mechanics of the activation process is in store. We also think it will be very interesting to trace the details of the validator's activities once it is activated. We have learned a lot here in that we have covered some key players in this protocol upgrade and how they are expected to behave in this current phase. It does seem worthwhile to continue this exploration but we will wait until the prop of an activated validator is available. According to these logs it should be just a few days. *Stay tuned for the second part of this exploration where we dive more deeply into the validator activation process!*
 
