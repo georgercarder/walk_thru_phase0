@@ -36,7 +36,6 @@ We will be setting up 3 entities:
 
 There are also auxiliary steps we will take to initialize this "fleet". 
 
-We also "tie it all together".
 
 We will be installing and running these nodes from the `bash` shell of a Linux system. All nodes will be run under the same host. The order in which we set these nodes up matters to a certain extent, so we suggest following the order of this exploration.
 
@@ -174,13 +173,34 @@ Since this validator node is under the same host as our beacon node, this applic
 
 // screen shot
 
-### Tying it all together
+### Let's review our system 
 
-	// TODO trace through etherscan, beaconscan
+As promised, now all our 3 entities are up and running, and our eth1 node and beacon node are fully synced.
 
----
+// TODO SCREENSHOT
 
-// TODO conclusion
+But we see from our validator the persistently repeating log `Awaiting activation`.
 
+// TODO SCREENSHOT
+
+Let's trace our setup from the vantage point of the block explorers for both the Goerli and beacon blockchains.
+
+For this exploration, I used a fresh wallet for the Metamask transaction:
+
+// TODO SCREENSHOT
+
+The only outbound transaction from this address is to the Medalla Beacon Contract which we made in the last section:
+
+// TODO SCREENSHOT
+
+The validator public key associated with this transaction is noted in the Beacon Chain Deposit entry:
+
+// TODO SCREENSHOT
+
+We see here that despite the transaction was made Sep-28-2020, on Oct-2-2020 validator status is that it is awaiting activation.
+
+// TODO SCREENSHOT
+
+We believe a deeper exploration into the mechanics of the activation process is in store. We also think it will be very interesting to trace the details of the validator's activities once it is activated. We have learned a lot here in that we have covered some key players in this protocol upgrade and how they are expected to behave in this current phase. It does seem worthwhile to continue this exploration but we will wait until the prop of an activated validator is available. According to these logs it should be just a few days. *Stay tuned for the second part of this exploration where we dive more deeply into the validator activation process!*
 
 *Note: The worm vs Millipede metaphor can indeed be extended to accommodate forks in all blockchains of this system but for now we'll avoid a dive into talking about this system within a futuristic higher-dimensional space. The reader is welcome to run with it in the comments... :)*
