@@ -38,7 +38,7 @@ We will be setting up 3 entities:
 
 There are also auxiliary steps we will take to initialize this "fleet". 
 
-We will be installing and running these nodes from the [`bash` shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) of a [Linux\* system](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pestaola.gr%2Fimg1%2Flinus-torvalds-vs-richard-stallman.jpg&f=1&nofb=1). All nodes will be run under the same host. The order in which we set these nodes up matters to a certain extent, so we suggest following the order of this exploration.
+We will be installing and running these nodes from the [`bash` shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) of a [Linux\* system](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F2.bp.blogspot.com%2F-JEkCj8lr_DM%2FT9OHAncut6I%2FAAAAAAAADfg%2Fv14RMt9LRdE%2Fs1600%2Frms-linus.jpg&f=1&nofb=1). All nodes will be run under the same host. The order in which we set these nodes up matters to a certain extent, so we suggest following the order of this exploration.
 
 ### First, let's set up the Eth1 node.
 
