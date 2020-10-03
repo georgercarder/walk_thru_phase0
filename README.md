@@ -140,7 +140,7 @@ The `pubkey` is the validator public key.
 
 The `signature` is a proof of possession (a BLS12-381) signature. 
 
-The `withdrawal_credentials` is a commitment to a withdrawal public keyset that enables a validator to move their balance (in phases 1/2).
+The `withdrawal_credentials` is a commitment to a withdrawal public key that enables a validator to move their balance (in phases 1/2).
 
 The `deposit_data_root` is a value used to check the integrity of the relationship between the `pubkey`, `signature`, and `withdrawal_credentials`.
 
