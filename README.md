@@ -194,7 +194,17 @@ We believe a deeper exploration into the mechanics of the activation process is 
 
 References and further reading:
 
-// TODO
+- [Eth 2.0 Specs](https://github.com/ethereum/eth2.0-specs) 
+
+- [Understanding Serenity](https://blog.ethereum.org/2015/12/24/understanding-serenity-part-i-abstraction/)
+
+- [Proof of Stake - Wiki](https://en.wikipedia.org/wiki/Proof_of_stake)
+
+- [Prysm Docs](https://docs.prylabs.network/docs/getting-started/)
+
+- [Lighthouse Book](https://lighthouse-book.sigmaprime.io/)
+
+
 
 -----
 
