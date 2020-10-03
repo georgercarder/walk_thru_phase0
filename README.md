@@ -1,10 +1,6 @@
+![a_walk.png](img/a_walk.png?raw=true)
+
 #### Eth 2.0: A walk through Phase 0
-
-// TODO INCLUDE LINKS, AND PICTURES
-
-// TODO EDIT FOR typos, brain-os, grammar
-
-// TODO review all "Eth1.0" vs eth1 labels (same for 2.0)
 
 With the greatly anticipated release of various beacon-chain testnets we were curious to get a hands-on introduction to the various entities in the Eth 2.0 protocol. There is a great deal written online about Eth 2.0 and facets of its various phases so we figure the simplest way for us to get a unified view into Phase 0 of this upgrade is to just follow our nose and trace the interactions of some existing clients. 
 
@@ -197,6 +193,12 @@ We see here that despite the transaction was made Sep-28-2020, on Oct-2-2020 val
 ![validator_pending.png](img/validator_pending.png?raw=true)
 
 We believe a deeper exploration into the mechanics of the activation process is in store. We also think it will be very interesting to trace the details of the validator's activities once it is activated. We have learned a lot here in that we have covered some key players in this protocol upgrade and how they are expected to behave in this current phase. It does seem worthwhile to continue this exploration but we will wait until the prop of an activated validator is available. According to these logs it should be just a few days. *Stay tuned for the second part of this exploration where we dive more deeply into the validator activation process!*
+
+References and further reading:
+
+// TODO
+
+-----
 
 *\* GNU/Linux system
 
