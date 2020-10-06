@@ -1,4 +1,4 @@
-![a_walk.png](https://github.com/georgercarder/walk_thru_phase0/img/a_walk.png)
+![a_walk.png](https://github.com/georgercarder/walk_thru_phase0/master/blob/img/a_walk.png)
 
 With the greatly anticipated release of various beacon-chain testnets we were curious to get a hands-on introduction to the various entities in the Eth 2.0 protocol. There is a great deal written online about Eth 2.0 and facets of its various phases so we figure the simplest way for us to get a unified view into Phase 0 of this upgrade is to just follow our nose and trace the interactions of some existing clients. 
 
@@ -64,7 +64,7 @@ screen -S gethnode-goerli -X stuff 'geth --goerli console'
 
 This is the minimal command to start the Eth1 node syncing to the G&ouml;rli testnet. Recall that syncing for an Eth1 node consists of importing, validating, and assembling blocks into a locally stored blockchain where the blocks wrap data referencing actual transactions. It may take several hours for this node to completely sync. Depending on the blockchain you are syncing you many need to run this on a system with a large amount of storage. On our device, we use a 1TB SSD. Various flags may be used for additional functionality, for instance you may want graphQL, or web-sockets RPC calls or to read/write to a custom data directory. `geth --help` will give you a list of the available flags. It may also be worthwhile to setup a firewall if your node is serving an RPC. A very simple, lightweight, and effective firewall can be setup using `iptables` which is available on many systems.
 
-![goerli_logs.png](https://github.com/georgercarder/walk_thru_phase0/img/goerli_logs.png)
+![goerli_logs.png](https://github.com/georgercarder/walk_thru_phase0/master/blob/img/goerli_logs.png)
 
 ### Next, we set up the Beacon node.
 
@@ -96,7 +96,7 @@ screen -S lighthouse-beacon-node -X stuff 'lighthouse beacon_node --staking'
 
 This is the minimal command to start the beacon node syncing while making available an endpoint for communication with validators. Fortunately, this "lighthouse" beacon node client points to the default port of our `geth` G&ouml;rli node "out of the box". Again, like the Eth1 node, the syncing could take several hours. Like the Eth1 node, the syncing process for this Eth2 node builds its respective beacon blockchain by validating and combining data from beacon node peers as well as Eth1 chain data resulting from the validator Deposit contract so that it may form and maintain a beacon state. Details of these deposit transactions will be elaborated in the validator section. Data from these deposit logs must be processed in sequential order. There is added complexity in this node due to the maintenance of a full deposit Merkle Tree and computing updated proofs against other deposits as needed. 
 
-![beacon_logs.png](https://github.com/georgercarder/walk_thru_phase0/img/beacon_logs.png)
+![beacon_logs.png](https://github.com/georgercarder/walk_thru_phase0/master/blob/img/beacon_logs.png)
 
 ### Now, we set up the Validator node.
 
@@ -148,7 +148,7 @@ But it is not necessary that the typical user know the meaning of these values.
 
 Fortunately, the guide that we have been loosely following (the Eth2 Launch Pad for the Medalla testnet), provides as one of its steps a dApp interface that will make this call to `deposit`, setting as parameters entries from the "deposit data" we just generated. We simply need to drag and drop the `deposit_data-*.json` file into their UI, and complete the transaction using Metamask. Be sure to have a wallet with G&ouml;rli ETH tokens set up in Metamask. This wallet is unrelated to any of the keysets we've discussed so far. The only stipulation is that this transaction sends the amount of N * 32 G&ouml;rli ETH where N is the number of validators you indicated in the `./deposit.sh` step. [This social faucet is a great way to get 32+ G&ouml;rli ETH](https://faucet.goerli.mudit.blog/).
 
-![launchpad_dragndrop.png](https://github.com/georgercarder/walk_thru_phase0/img/launchpad_dragndrop.png)
+![launchpad_dragndrop.png](https://github.com/georgercarder/walk_thru_phase0/master/blob/img/launchpad_dragndrop.png)
 
 Now we start our validator node!
 
@@ -170,25 +170,25 @@ Since this validator node is under the same host as our beacon node, this applic
 
 As promised, now all our 3 entities are up and running, and our Eth1 node and beacon node are fully synced.
 
-![all_logs.png](https://github.com/georgercarder/walk_thru_phase0/img/all_logs.png)
+![all_logs.png](https://github.com/georgercarder/walk_thru_phase0/master/blob/img/all_logs.png)
 
 But we see from our validator the persistently repeating log `Awaiting activation`.
 
-![validator_logs.png](https://github.com/georgercarder/walk_thru_phase0/img/validator_logs.png)
+![validator_logs.png](https://github.com/georgercarder/walk_thru_phase0/master/blob/img/validator_logs.png)
 
 Let's trace our setup from the vantage point of the block explorers for both the G&ouml;rli and beacon blockchains.
 
 For this exploration, We used a fresh wallet for the Metamask transaction:
 
-![eth_account.png](https://github.com/georgercarder/walk_thru_phase0/img/eth_account.png)
+![eth_account.png](https://github.com/georgercarder/walk_thru_phase0/master/blob/img/eth_account.png)
 
 The only outbound transaction from this address is to the Medalla Beacon Contract which we made in the last section. The validator public key associated with this transaction is noted in the Beacon Chain Deposit entry:
 
-![depost_tx_success.png](https://github.com/georgercarder/walk_thru_phase0/img/deposit_tx_success.png)
+![depost_tx_success.png](https://github.com/georgercarder/walk_thru_phase0/master/blob/img/deposit_tx_success.png)
 
 We see here that despite the transaction was made Sep-28-2020, on Oct-2-2020 validator status is awaiting for activation.
 
-![validator_pending.png](https://github.com/georgercarder/walk_thru_phase0/img/validator_pending.png)
+![validator_pending.png](https://github.com/georgercarder/walk_thru_phase0/master/blob/img/validator_pending.png)
 
 We believe a deeper exploration into the mechanics of the activation process is in store. We also think it will be very interesting to trace the details of the validator's activities once it is activated. We have learned a lot here in that we have covered some key players in this protocol upgrade and how they are expected to behave in this current phase. It does seem worthwhile to continue this exploration but we will wait until the prop of an activated validator is available. According to these logs it should be just a few days. *Stay tuned for the second part of this exploration where we dive more deeply into the validator activation process!*
 
