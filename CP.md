@@ -1,4 +1,4 @@
-![a_walk.png](https://github.com/georgercarder/walk_thru_phase0/blob/master/img/a_walk.png)
+![a_walk_opaque.png](https://github.com/georgercarder/walk_thru_phase0/blob/master/img/a_walk.png)
 
 With the greatly anticipated release of various beacon-chain testnets we were curious to get a hands-on introduction to the various entities in the Eth 2.0 protocol. There is a great deal written online about Eth 2.0 and facets of its various phases so we figure the simplest way for us to get a unified view into Phase 0 of this upgrade is to just follow our nose and trace the interactions of some existing clients. 
 
